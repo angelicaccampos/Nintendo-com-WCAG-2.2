@@ -1,1 +1,293 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo - Mundo Acessível (Apenas HTML)</title>
+    <style>
+        /* Estilos muito básicos para tornar o HTML puro um pouco mais legível. */
+        /* Em um ambiente de "apenas HTML", o navegador renderizaria com seus estilos padrão. */
+        /* Estes estilos são apenas para demonstração da estrutura. */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        header {
+            background-color: #e60012; /* Vermelho Nintendo */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header .logo {
+            font-size: 2em;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        header .account-button {
+            background-color: #b3000e;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        nav.main-nav {
+            background-color: #cccccc; /* Cinza claro */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav.main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav.main-nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+        main {
+            padding: 20px 0;
+        }
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        section.hero-banner {
+            background-color: #ff0000; /* Vermelho vibrante */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative; /* Para posicionar botões de exemplo */
+        }
+        .hero-banner img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .hero-banner .action-button {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%; /* Para ser circular */
+            position: absolute;
+            top: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .hero-banner .action-button.left { left: 20px; }
+        .hero-banner .action-button.right { right: 20px; }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box; /* Inclui padding na largura */
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #e60012;
+        }
+        .card-image-group img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .game-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .game-card .content {
+            padding: 15px;
+        }
+        .game-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .game-card .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Azul padrão */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo_Logo.svg" alt="Logo Nintendo" style="height: 30px; margin-right: 10px;">
+                <span class="logo">Nintendo Acessível</span>
+            </div>
+
+            <button class="account-button" aria-label="Minha Conta e Opções de Idioma">
+                Conta / Idioma
+            </button>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#jogos" aria-label="Navegar para a seção de Jogos">Jogos</a></li>
+                <li><a href="#noticias" aria-label="Navegar para a seção de Notícias">Notícias</a></li>
+                <li><a href="#eshop" aria-label="Navegar para a eShop da Nintendo">eShop</a></li>
+                <li><a href="#minha-nintendo" aria-label="Acessar Minha Conta Nintendo">My Nintendo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero-banner">
+            <button class="action-button left" aria-label="Explorar Conteúdo Adicional">+</button>
+            <button class="action-button right" aria-label="Ver Calendário de Lançamentos">📆</button>
+
+            <h1>Explore o Mundo Nintendo!</h1>
+            <p>Sua aventura começa aqui. Encontre seus jogos favoritos e muito mais.</p>
+            <img src="https://www.nintendo.com/eu/media/images/10_square_images/nintendo_switch_2/960x960_super_mario_bros_wonder.png" alt="Personagens Mario e Luigi em um cenário vibrante do jogo, com flores falantes.">
+        </section>
+
+        <section class="cards-grid">
+            <div class="card">
+                <h2>Guia Passo a Passo</h2>
+                <p>Aprenda a configurar seu console, gerenciar sua conta e muito mais com nossas **instruções claras e fáceis de seguir**.</p>
+                <div class="card-image-group" style="display: flex; margin-top: 15px;">
+                    <img src="https://picsum.photos/80/80?random=1" alt="Ícone de console Nintendo">
+                    <img src="https://picsum.photos/80/80?random=2" alt="Ícone de computador com jogo">
+                    <img src="https://picsum.photos/80/80?random=3" alt="Ícone de controle de jogo">
+                </div>
+                <a href="#guia-completo" aria-label="Acessar o Guia Completo de Instruções" style="display: block; margin-top: 15px; color: #e60012; text-decoration: underline;">Ver guia completo</a>
+            </div>
+
+            <div class="card">
+                <h2>Minha Conta Nintendo</h2>
+                <p>Gerencie seu perfil, acompanhe seus pontos My Nintendo e personalize sua experiência com facilidade.</p>
+                <button aria-label="Entrar ou criar uma conta My Nintendo" style="background-color: #e60012; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+                    Entrar na Minha Conta
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Jogos em Destaque</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <img src="https://picsum.photos/300/200?random=4" alt="Capa do jogo Super Mario Odyssey">
+                    <div class="content">
+                        <h3>Super Mario Odyssey</h3>
+                        <p>Explore mundos vastos e salve a Princesa Peach!</p>
+                        <a href="#super-mario-odyssey" class="button" aria-label="Ver detalhes do jogo Super Mario Odyssey">Ver Jogo</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://picsum.photos/300/200?random=5" alt="Capa do jogo The Legend of Zelda: Tears of the Kingdom">
+                    <div class="content">
+                        <h3>Zelda: Tears of the Kingdom</h3>
+                        <p>Embarque em uma nova aventura por Hyrule.</p>
+                        <a href="#zelda-tears-of-the-kingdom" class="button" aria-label="Ver detalhes do jogo The Legend of Zelda: Tears of the Kingdom">Ver Jogo</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://picsum.photos/300/200?random=6" alt="Capa do jogo Pokémon Scarlet & Violet">
+                    <div class="content">
+                        <h3>Pokémon Scarlet & Violet</h3>
+                        <p>Capture, treine e lute com Pokémon incríveis!</p>
+                        <a href="#pokemon-scarlet-violet" class="button" aria-label="Ver detalhes do jogo Pokémon Scarlet & Violet">Ver Jogo</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://picsum.photos/300/200?random=7" alt="Capa do jogo Animal Crossing: New Horizons">
+                    <div class="content">
+                        <h3>Animal Crossing: New Horizons</h3>
+                        <p>Crie seu paraíso em uma ilha deserta.</p>
+                        <a href="#animal-crossing" class="button" aria-label="Ver detalhes do jogo Animal Crossing: New Horizons">Ver Jogo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nintendo Acessível. Todos os direitos reservados. Projeto Acadêmico.</p>
+            <nav>
+                <ul>
+                    <li><a href="#politica" aria-label="Ver Política de Privacidade">Política de Privacidade</a></li>
+                    <li><a href="#termos" aria-label="Ver Termos de Uso">Termos de Uso</a></li>
+                    <li><a href="#contato" aria-label="Entrar em Contato Conosco">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
