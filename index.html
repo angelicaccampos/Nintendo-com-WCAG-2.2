@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nintendo - Mundo Acessível (Com Acessibilidade WCAG 2.2)</title>
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nintendo - Mundo Acessível (Com Acessibilidade WCAG 2.2)</title>
+  <style>
         body {
             font-family: sans-serif;
             margin: 0;
@@ -258,94 +258,93 @@
             overflow: hidden;
             word-wrap: normal !important;
         }
-    </style>
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="display: flex; align-items: center;">
-                <img src="assets/Nintendo.svg.png" alt="Logo da Nintendo" style="height: 70px; margin-right: 50px;">
-                <span class="logo">Nintendo Acessível</span>
-            </div>
+  <header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center;">
+        <img src="assets/Nintendo.svg.png" alt="Logo da Nintendo" style="height: 70px; margin-right: 50px;" />
+        <span class="logo">Nintendo Acessível</span>
+      </div>
+      <a href="#login-section" class="account-button" role="button" aria-label="Acessar a seção de Login">Login</a>
+    </div>
+  </header>
 
-            <button class="account-button" aria-label="Minha Conta">
-                <a href="#login-section" aria-label="Acessar a seção de Login" > Login </a>
-            </button>
+  <nav class="main-nav">
+    <div class="container">
+      <ul>
+        <li><a href="#jogos" aria-label="Navegar para a seção de Jogos">Jogos</a></li>
+        <li><a href="#noticias" aria-label="Navegar para a seção de Notícias">Notícias</a></li>
+        <li><a href="#eshop" aria-label="Navegar para a eShop da Nintendo">eShop</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero-banner">
+      <h1>Explore o Mundo Nintendo!</h1>
+      <p>Sua aventura começa aqui. Encontre seus jogos favoritos e muito mais.</p>
+    </section>
+
+    <section class="cards-grid">
+      <div class="card">
+        <h2>Guia Passo a Passo</h2>
+        <p>Aprenda a configurar seu console, gerenciar sua conta e muito mais com nossas instruções claras e fáceis de seguir.</p>
+        <div class="card-image-group" style="display: flex; margin-top: 15px;">
+          <img src="https://picsum.photos/80/80?random=1" alt="Ícone de console Nintendo" />
+          <img src="https://picsum.photos/80/80?random=2" alt="Ícone de computador com jogo" />
+          <img src="https://picsum.photos/80/80?random=3" alt="Ícone de controle de jogo" />
         </div>
-    </header>
+      </div>
 
-    <nav class="main-nav">
-        <div class="container">
-            <ul>
-                <li><a href="#jogos" aria-label="Navegar para a seção de Jogos">Jogos</a></li>
-                <li><a href="#noticias" aria-label="Navegar para a seção de Notícias">Notícias</a></li>
-                <li><a href="#eshop" aria-label="Navegar para a eShop da Nintendo">eShop</a></li>
-            </ul>
+      <div class="card">
+        <h2>Minha Conta Nintendo</h2>
+        <p>Gerencie seu perfil, acompanhe seus pontos My Nintendo e personalize sua experiência com facilidade.</p>
+        <button type="button" aria-label="Entrar ou criar uma conta My Nintendo" onclick="document.getElementById('login-section').scrollIntoView({ behavior: 'smooth' });" style="background-color: #e60012; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+          Entrar na Minha Conta
+        </button>
+      </div>
+    </section>
+
+    <section id="login-section">
+      <h2>Acessar Minha Conta Nintendo</h2>
+      <p>Por favor, insira suas credenciais para acessar sua conta.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required autocomplete="username" aria-describedby="email-error" />
+          <span id="email-error" class="error-message" role="alert"></span>
         </div>
-    </nav>
 
-    <main> <section class="hero-banner">
-            <h1>Explore o Mundo Nintendo!</h1>
-            <p>Sua aventura começa aqui. Encontre seus jogos favoritos e muito mais.</p>
-            </section>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password" aria-describedby="password-error password-requirements" />
+          <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">Mostrar Senha</button>
+          <span id="password-error" class="error-message" role="alert"></span>
+          <ul id="password-requirements" class="password-requirements">
+            <li>Mínimo de 8 caracteres</li>
+            <li>Pelo menos uma letra maiúscula</li>
+            <li>Pelo menos um número</li>
+            <li>Pelo menos um caractere especial (!@#$%)</li>
+          </ul>
+        </div>
 
-        <section class="cards-grid">
-            <div class="card">
-                <h2>Guia Passo a Passo</h2>
-                <p>Aprenda a configurar seu console, gerenciar sua conta e muito mais com nossas instruções claras e fáceis de seguir.</p>
-                <div class="card-image-group" style="display: flex; margin-top: 15px;">
-                    <img src="https://picsum.photos/80/80?random=1" alt="Ícone de console Nintendo">
-                    <img src="https://picsum.photos/80/80?random=2" alt="Ícone de computador com jogo">
-                    <img src="https://picsum.photos/80/80?random=3" alt="Ícone de controle de jogo">
-                </div>
-            </div>
+        <div class="form-group">
+          <button type="submit" style="background-color: #e60012; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">
+            Entrar
+          </button>
+          <button type="button" style="background-color: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; margin-left: 10px;">
+            Esqueci a Senha
+          </button>
+        </div>
+      </form>
+      <div id="form-submission-status" class="aria-live-region" aria-live="assertive"></div>
+    </section>
 
-            <div class="card">
-                <h2>Minha Conta Nintendo</h2>
-                <p>Gerencie seu perfil, acompanhe seus pontos My Nintendo e personalize sua experiência com facilidade.</p>
-                <button aria-label="Entrar ou criar uma conta My Nintendo" onclick="document.getElementById('login-section').scrollIntoView({ behavior: 'smooth' });" style="background-color: #e60012; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
-                    Entrar na Minha Conta
-                </button>
-            </div>
-        </section>
-
-        <section id="login-section">
-            <h2>Acessar Minha Conta Nintendo</h2>
-            <p>Por favor, insira suas credenciais para acessar sua conta.</p>
-
-            <form id="loginForm" novalidate>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required autocomplete="username" aria-describedby="email-error">
-                    <span id="email-error" class="error-message" role="alert"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Senha:</label>
-                    <input type="password" id="password" name="password" required autocomplete="current-password" aria-describedby="password-error password-requirements">
-                    <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">Mostrar Senha</button>
-                    <span id="password-error" class="error-message" role="alert"></span>
-                    <ul id="password-requirements" class="password-requirements">
-                        <li>Mínimo de 8 caracteres</li>
-                        <li>Pelo menos uma letra maiúscula</li>
-                        <li>Pelo menos um número</li>
-                        <li>Pelo menos um caractere especial (!@#$%)</li>
-                    </ul>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" style="background-color: #e60012; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">
-                        Entrar
-                    </button>
-                    <button type="button" style="background-color: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; margin-left: 10px;">
-                        Esqueci a Senha
-                    </button>
-                </div>
-            </form>
-            <div id="form-submission-status" class="aria-live-region" aria-live="assertive"></div>
-        </section>
-        <section>
-            <h2>Jogos em Destaque</h2>
+    <section id="jogos">
+      <h2>Jogos em Destaque</h2>
             <div class="game-grid">
                 <div class="game-card">
                     <img src="https://picsum.photos/300/200?random=4" alt="Capa do jogo Super Mario Odyssey">
@@ -383,121 +382,114 @@
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
+  </main>
 
-    </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nintendo Acessível. Todos os direitos reservados. Projeto desenvolvido como atividade prática da disciplina de Interação Humano-Computador</p>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/angelicaccampos/Nintendo-com-WCAG-2.2" aria-label="Entrar em Contato Conosco">Fale Conosco</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Nintendo Acessível. Todos os direitos reservados. Projeto desenvolvido como atividade prática da disciplina de Interação Humano-Computador</p>
-            <nav>
-                <ul>
-                    <li><a href="https://github.com/angelicaccampos/Nintendo-com-WCAG-2.2" aria-label="Entrar em Contato Conosco">Fale Conosco</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
+  <script>
+    function togglePasswordVisibility() {
+      const passwordField = document.getElementById('password');
+      const toggleButton = document.querySelector('.password-toggle');
+      const isPasswordVisible = passwordField.type === 'text';
 
-    <script>
-        function togglePasswordVisibility() {
-            const passwordField = document.getElementById('password');
-            const toggleButton = document.querySelector('.password-toggle');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                toggleButton.textContent = 'Ocultar Senha';
-                toggleButton.setAttribute('aria-pressed', 'true');
-            } else {
-                passwordField.type = 'password';
-                toggleButton.textContent = 'Mostrar Senha';
-                toggleButton.setAttribute('aria-pressed', 'false');
-            }
-        }
+      passwordField.type = isPasswordVisible ? 'password' : 'text';
+      toggleButton.textContent = isPasswordVisible ? 'Mostrar Senha' : 'Ocultar Senha';
+      toggleButton.setAttribute('aria-pressed', !isPasswordVisible);
+    }
 
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            const emailInput = document.getElementById('email');
-            const passwordInput = document.getElementById('password');
-            const emailError = document.getElementById('email-error');
-            const passwordError = document.getElementById('password-error');
-            const submissionStatus = document.getElementById('form-submission-status');
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const emailError = document.getElementById('email-error');
+      const passwordError = document.getElementById('password-error');
+      const submissionStatus = document.getElementById('form-submission-status');
 
-            let isValid = true;
-            let errorMessage = '';
+      let isValid = true;
 
-            emailError.textContent = '';
-            passwordError.textContent = '';
-            emailInput.classList.remove('error');
-            passwordInput.classList.remove('error');
-            submissionStatus.textContent = ''; 
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      emailInput.classList.remove('error');
+      passwordInput.classList.remove('error');
+      submissionStatus.textContent = '';
 
-            if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
-                emailError.textContent = 'O email deve conter "@" e um domínio. Ex: seu.email@dominio.com';
-                emailInput.classList.add('error');
-                emailInput.focus(); 
-                isValid = false;
-            } else if (emailInput.value.length < 5) { 
-                 emailError.textContent = 'O email é muito curto. Por favor, insira um email válido.';
-                 emailInput.classList.add('error');
-                 emailInput.focus();
-                 isValid = false;
-            }
+      if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+        emailError.textContent = 'O email deve conter "@" e um domínio. Ex: seu.email@dominio.com';
+        emailInput.classList.add('error');
+        emailInput.focus();
+        isValid = false;
+      } else if (emailInput.value.length < 5) {
+        emailError.textContent = 'O email é muito curto. Por favor, insira um email válido.';
+        emailInput.classList.add('error');
+        emailInput.focus();
+        isValid = false;
+      }
 
-            // Requisitos: Mínimo 8 caracteres, 1 maiúscula, 1 número, 1 especial
-            const passwordValue = passwordInput.value;
-            const passwordRequirements = document.querySelectorAll('#password-requirements li');
-            let passwordValid = true;
+      const passwordValue = passwordInput.value;
+      const passwordRequirements = document.querySelectorAll('#password-requirements li');
+      let passwordValid = true;
 
-            passwordRequirements.forEach(li => {
-                li.classList.remove('valid', 'invalid');
-            });
+      passwordRequirements.forEach(li => li.classList.remove('valid', 'invalid'));
 
-            if (passwordValue.length < 8) {
-                passwordValid = false;
-                passwordRequirements[0].classList.add('invalid');
-            } else {
-                passwordRequirements[0].classList.add('valid');
-            }
-            if (!/[A-Z]/.test(passwordValue)) {
-                passwordValid = false;
-                passwordRequirements[1].classList.add('invalid');
-            } else {
-                passwordRequirements[1].classList.add('valid');
-            }
-            if (!/\d/.test(passwordValue)) {
-                passwordValid = false;
-                passwordRequirements[2].classList.add('invalid');
-            } else {
-                passwordRequirements[2].classList.add('valid');
-            }
-            if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(passwordValue)) {
-                passwordValid = false;
-                passwordRequirements[3].classList.add('invalid');
-            } else {
-                passwordRequirements[3].classList.add('valid');
-            }
+      if (passwordValue.length < 8) {
+        passwordValid = false;
+        passwordRequirements[0].classList.add('invalid');
+      } else {
+        passwordRequirements[0].classList.add('valid');
+      }
 
-            if (!passwordValid) {
-                passwordError.textContent = 'A senha não atende aos requisitos. Verifique a lista acima.';
-                passwordInput.classList.add('error');
-                if (isValid) passwordInput.focus(); 
-                isValid = false;
-            }
+      if (!/[A-Z]/.test(passwordValue)) {
+        passwordValid = false;
+        passwordRequirements[1].classList.add('invalid');
+      } else {
+        passwordRequirements[1].classList.add('valid');
+      }
 
-            if (passwordValue === '12345678' || passwordValue.toLowerCase() === 'senha123') {
-                passwordError.textContent = 'Esta senha é muito comum. Por favor, escolha uma senha mais forte, combinando letras, números e símbolos.';
-                passwordInput.classList.add('error');
-                if (isValid) passwordInput.focus(); 
-                isValid = false;
-            }
+      if (!/\d/.test(passwordValue)) {
+        passwordValid = false;
+        passwordRequirements[2].classList.add('invalid');
+      } else {
+        passwordRequirements[2].classList.add('valid');
+      }
 
-            if (isValid) {
-                submissionStatus.textContent = 'Login realizado com sucesso! Redirecionando...';
-                alert('Login bem-sucedido! (Simulado)');
-            } else {
-                submissionStatus.textContent = 'Há erros no formulário. Por favor, corrija os campos marcados.';
-            }
-        });
-    </script>
+      if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(passwordValue)) {
+        passwordValid = false;
+        passwordRequirements[3].classList.add('invalid');
+      } else {
+        passwordRequirements[3].classList.add('valid');
+      }
 
+      if (!passwordValid) {
+        passwordError.textContent = 'A senha não atende aos requisitos. Verifique a lista acima.';
+        passwordInput.classList.add('error');
+        if (isValid) passwordInput.focus();
+        isValid = false;
+      }
+
+      if (['12345678', 'senha123'].includes(passwordValue.toLowerCase())) {
+        passwordError.textContent = 'Esta senha é muito comum. Por favor, escolha uma senha mais forte.';
+        passwordInput.classList.add('error');
+        if (isValid) passwordInput.focus();
+        isValid = false;
+      }
+
+      if (isValid) {
+        submissionStatus.textContent = 'Login realizado com sucesso! Redirecionando...';
+        alert('Login bem-sucedido! (Simulado)');
+      } else {
+        submissionStatus.textContent = 'Há erros no formulário. Por favor, corrija os campos marcados.';
+      }
+    });
+  </script>
 </body>
 </html>
